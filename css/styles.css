@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #e0e6f6;
+    background: linear-gradient(135deg, #1c2b5a, #1e3c72);
+    background-size: 400% 400%; /* Larger size for smooth animation */
+    animation: gradientAnimation 15s ease infinite; /* Slow movement of gradient */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    height: 85vh;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 3.5rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 520px;
+    margin-top: -5vh;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #eaf0ff;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: none;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    color: #1e3c72;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 60, 114, 0.6);
+}
+
+.form-control::placeholder {
+    color: #a3b1c6;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+    border-radius: 40px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    color: #eaf0ff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #0047a6;
+    transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+    .form-box {
+        padding: 3rem 1.5rem;
+        max-width: 90%;
+    }
+}
