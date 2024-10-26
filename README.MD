@@ -1,8 +1,8 @@
-# IOC Extractor Webpage
+# IOC Extractor
 
 ## Overview
 
-Welcome to the [**IOC Extractor Webpage**](https://r0drigo-0.github.io/IOCExtractor/)! This is a tool empowers users to extract Indicators of Compromise (IOCs) from URLs seamlessly. By leveraging multiple CORS proxy services, it fetches and analyzes website content, presenting the relevant IOCs in an intuitive format.
+Welcome to the [**IOC Extractor**](https://r0drigo-0.github.io/IOCExtractor/)! This is a tool empowers users to extract Indicators of Compromise (IOCs) from URLs seamlessly. By leveraging multiple CORS proxy services, it fetches and analyzes website content, presenting the relevant IOCs in an intuitive format.
 
 ## Features
 
