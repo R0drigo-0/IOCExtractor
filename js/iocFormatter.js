@@ -26,7 +26,7 @@ export const setupCopyButtons = () => {
             });
         });
     }
-};  
+};
 
 // Initialize the application
 const initializeApp = () => {
@@ -74,7 +74,7 @@ const initializeApp = () => {
             showToast('Analysis completed successfully!');
 
         } catch (error) {
-            showToast(error.message, 'danger');
+            //showToast(error.message, 'danger');
             contentDisplay.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
         } finally {
             // Reset loading state

@@ -11,12 +11,14 @@ body {
     margin: 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    /* Modern font style */
 }
 
 .navbar {
     height: var(--header-height);
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
 }
 
@@ -29,7 +31,7 @@ body {
     border-radius: 25px 0 0 25px !important;
     border: 2px solid var(--primary-color) !important;
     padding: 0.75rem 1.5rem !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
 }
 
 .submit-button {
@@ -50,12 +52,13 @@ body {
     display: flex;
     gap: 1rem;
     padding: 0 1rem 1rem 1rem;
+    padding-bottom: 3rem;
 }
 
 .content-card {
     background: white;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 100%;
     transition: all var(--transition-speed) ease;
     display: flex;
@@ -63,7 +66,7 @@ body {
 }
 
 .content-card:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
@@ -92,7 +95,6 @@ body {
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.8);
     padding: 1rem;
-    border-radius: 50%;
 }
 
 .type-badge {
@@ -113,7 +115,8 @@ body {
     z-index: 1000;
 }
 
-.ioc-section, .website-section {
+.ioc-section,
+.website-section {
     flex: 1;
     min-width: 0;
     display: flex;
@@ -177,4 +180,42 @@ body {
     .card-body {
         padding: 0.5rem;
     }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+    border-top: 0.5rem solid var(--primary-color);
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+}
+
+.website-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.fa-solid,
+.fas {
+    font-weight: 900;
+    padding-top: 3px;
+    font-size: 16px;
 }

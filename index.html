@@ -6,6 +6,7 @@
     <title>IOC Extractor</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -44,7 +45,7 @@
                     </div>
                     <div class="card-body position-relative">
                         <div id="contentDisplay"></div>
-                        <div class="loading-spinner">
+                        <div class="loading-spinner" style="display: none;">
                             <div class="spinner-border text-primary" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
@@ -69,6 +70,10 @@
     <div id="toast-container"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/toastUtils.js"></script>
+    <script type="module" src="js/iocFormatter.js"></script>
+    <script type="module" src="js/iocExtractor.js"></script>
     <script type="module" src="js/main.js"></script>
+
 </body>
 </html>

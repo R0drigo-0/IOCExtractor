@@ -11,9 +11,8 @@ const iocPatterns = {
   md5: /\b[A-Fa-f0-9]{32}\b/g,
   cve: /\bCVE-\d{4}-\d{1,7}\b/g,
   mitre: /\bT\d{4}\b/g,
-  clamav: /\b[A-Za-z0-9]+\.[A-Za-z0-9]+\.[A-Za-z0-9]+-[0-9]+-[0-9]+\b/g, // Ensure correct format
+  clamav: /\b[A-Za-z0-9]+\.[A-Za-z0-9]+\.[A-Za-z0-9]+-[0-9]+-[0-9]+\b/g,
 };
-
 
 const extractYaraRules = (text) => {
   const yaraPattern = /rule\s+[A-Za-z0-9._]+\s*:\s*[A-Za-z0-9._]+\s*{/g;
@@ -40,8 +39,7 @@ const extractYaraRules = (text) => {
 };
 
 const extractSnortRules = (text) => {
-  const snortPattern =
-    /(?:alert|reject)\s+(tcp|udp|icmp|ip)\s+(any|[a-zA-Z0-9_.$]+)\s+(any|[a-zA-Z0-9_.$]+)\s*->\s+(any|[a-zA-Z0-9_.$]+)\s+(any|[a-zA-Z0-9_.$]+)\s*\(([^()]*;?)+\)/g;
+  const snortPattern = /(?:alert|reject)\s+(tcp|udp|icmp|ip)\s+(any|[a-zA-Z0-9_.$]+)\s+(any|[a-zA-Z0-9_.$]+)\s*->\s+(any|[a-zA-Z0-9_.$]+)\s+(any|[a-zA-Z0-9_.$]+)\s*\(([^()]*;?)+\)/g;
   const validSnortRules = [];
   let match;
 
