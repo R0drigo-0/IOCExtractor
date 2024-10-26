@@ -137,6 +137,66 @@ body {
     font-size: 0.9rem;
 }
 
+.json-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.json-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 600px;
+    /* Limit the card width */
+    width: 100%;
+    /* Responsive width */
+}
+
+.json-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.copy-json-btn {
+    position: absolute;
+    right: 17px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.266s;
+    margin-bottom: 1rem;
+}
+
+.copy-json-btn:hover {
+    background-color: #5579ce;
+}
+
+.copy-json-btn:active {
+    background-color: #446dcf;
+    color: var(--primary-color);
+}
+
+.json-display {
+    font-family: monospace;
+    /* Monospace for JSON */
+    white-space: pre-wrap;
+    /* Preserve formatting */
+    background-color: #f0f4f8;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    border: 1px solid #ddd;
+    /* Light border for better visibility */
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body {
@@ -216,6 +276,5 @@ body {
 .fa-solid,
 .fas {
     font-weight: 900;
-    padding-top: 3px;
     font-size: 16px;
 }
