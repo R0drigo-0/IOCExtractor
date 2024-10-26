@@ -1,5 +1,5 @@
 import { showToast } from "./toastUtils.js";
-import { extractIOCs } from "./iocExtractor.js";
+import { extractIOCs } from "./iocExtract.js";
 import { formatIOCResults, setupCopyButtons } from "./iocFormatter.js";
 
 class IOCExtractor {
