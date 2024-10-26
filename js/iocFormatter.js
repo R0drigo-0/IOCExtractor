@@ -4,10 +4,12 @@ import { showToast } from './toastUtils.js';
 export const formatIOCResults = (results) => {
     const jsonString = JSON.stringify(results, null, 2);
     return `
-        <pre class="json-display">${jsonString}</pre>
-        <button class="btn btn-sm btn-outline-secondary copy-json-btn">
-            <i class="fas fa-copy"></i> Copy JSON
-        </button>
+        <div class="json-container">
+            <button class="btn btn-sm btn-outline-secondary copy-json-btn">
+                <i class="fas fa-copy"></i> Copy JSON
+            </button>
+            <pre class="json-display">${jsonString}</pre>
+        </div>
     `;
 };
 
@@ -24,7 +26,7 @@ export const setupCopyButtons = () => {
             });
         });
     }
-};
+};  
 
 // Initialize the application
 const initializeApp = () => {

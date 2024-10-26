@@ -120,10 +120,10 @@ class IOCExtractor {
         const scripts = div.getElementsByTagName('script');
         const iframes = div.getElementsByTagName('iframe');
         
-        while(scripts.length) {
+        while (scripts.length) {
             scripts[0].parentNode.removeChild(scripts[0]);
         }
-        while(iframes.length) {
+        while (iframes.length) {
             iframes[0].parentNode.removeChild(iframes[0]);
         }
         
