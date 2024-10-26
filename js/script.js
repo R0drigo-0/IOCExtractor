@@ -1,17 +1,28 @@
+import { extractIOCs } from './../js/iocextractor.js';
+
+const options = {
+  method: 'GET',
+  contentType: 'text/html',
+};
+
+const cleanText = (text) => {
+  return text
+    .replace(/[\r\n]+/g, ' ') // Replace breaklines with a space
+    .replace(/\s{2,}/g, ' ')   // Replace multiple spaces with a single space
+    .trim();                   // Remove leading and trailing spaces
+};
+
 document.getElementById("urlForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     const url = document.getElementById("urlInput").value;
-    const contentDisplay = document.getElementById("contentDisplay");
-    contentDisplay.innerHTML = "<p>Loading content...</p>";
 
     try {
         const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
-        const response = await fetch(proxyUrl);
+        const response = await fetch(proxyUrl, options);
         if (!response.ok) {
-            throw new Error("Network response was not ok");
+                throw new Error("Network response was not ok");
         }
 
-        const contentType = response.headers.get("content-type");
         let data;
         let htmlData;
 
@@ -21,9 +32,7 @@ document.getElementById("urlForm").addEventListener("submit", async (event) => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlData, "text/html");
 
-        const title = doc.querySelector("title")?.innerText || "No title found";
-
-        const mainContent = doc.querySelector("article")?.innerText || doc.body.innerText; // Limit to first 1000 characters
+        let mainContent = doc.querySelector("article")?.innerText || doc.body.innerText;
 
         const header = doc.querySelector("header");
         const footer = doc.querySelector("footer");
@@ -31,8 +40,12 @@ document.getElementById("urlForm").addEventListener("submit", async (event) => {
         if (header) header.remove();
         if (footer) footer.remove();
 
-        contentDisplay.innerHTML = `<h2>${title}</h2><p>${mainContent}</p>`;
-        
+        mainContent = cleanText(mainContent);
+
+        const extractedIOCs = extractIOCs(mainContent);
+
+        console.log(mainContent);
+        console.log(extractedIOCs);
 
     } catch (error) {
         contentDisplay.innerHTML = `<p>${error.message}</p>`;
