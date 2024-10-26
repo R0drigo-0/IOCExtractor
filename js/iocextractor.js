@@ -66,7 +66,7 @@ const extractSnortRules = (text) => {
   return validSnortRules;
 };
 
-const extractIOCs = async (text) => {
+export const extractIOCs = async (text) => {
   const results = {};
 
   const extractionPromises = Object.entries(iocPatterns).map(([type, pattern]) => {
@@ -84,5 +84,3 @@ const extractIOCs = async (text) => {
 
   return results;
 };
-
-export { extractIOCs };
